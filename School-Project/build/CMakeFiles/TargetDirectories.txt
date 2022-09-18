@@ -1,0 +1,3 @@
+/home/hackersmile/Documents/Cpp/School-Project/build/CMakeFiles/School-Project.dir
+/home/hackersmile/Documents/Cpp/School-Project/build/CMakeFiles/edit_cache.dir
+/home/hackersmile/Documents/Cpp/School-Project/build/CMakeFiles/rebuild_cache.dir

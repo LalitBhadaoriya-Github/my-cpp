@@ -1,62 +1,32 @@
 #include <iostream>
 #include "school.h"
 
-using namespace std;
 
-school::school()
-{
-    while(true)
+school::school():student1(1,"abhis",23,"math",78)
+    ,student2(2,"manoj",24,"math",50)
+    ,student3(3,"karan",25,"math",80)
     {
-        cout<<"student data store ------> 1"<<endl;
-        cout<<"teacher data store ------> 2"<<endl;
-        cout<<"exit --------------------> 3"<<endl;
-        cout<<"chose one option : ";
-        cin>>chose;
-        if(chose == 1)
-        {
-            cout<<"how many student are enter : ";
-            cin>>cont;
-            for(i=0; i<cont; i++)
-            {
-                cout<<"Enter student name : ";
-                cin>>name;
-                cout<<"Enter student address : ";
-                cin>>address;
-                cout<<"Which Class student are Addmission : ";
-                cin>>Class;
-                
-                student name(name,address,Class)
-            }
-        }
-        else if(chose == 2)
-        {
-            cout<<"how many teachers Enter : ";
-            cin>>cont;
-            for(i=0; i<cont; i++)
-            {
-                cout<<"Enter teacher name : ";
-                cin>>name;
-                cout<<"Enter teacher address : ";
-                cin>>address;
-                cout<<"Enter teacher mobile no : ";
-                cin>>mobile_no;
-                cout<<"Enter teacher subject : ";
-                cin>>subject;
-
-                teacher name(name, address, mobile_no, subject)
-            }
-        }
-        else
-        {
-            break;
-        }
     }
+
+void school::read_student_data(int id, std::string& l_name ,int& a_rool, std::string& a_sub,int& a_marks)
+{
+    student *stu_ptr=get_id(id);
+    if(stu_ptr == nullptr)
+    {
+       std::cout<<"unable to read id "<<std::endl;
+    }
+    stu_ptr->read_data(l_name,a_rool,a_sub,a_marks);
+    std::cout<<l_name<<std::endl;
 }
 
-void school::teacher_write()
+student* school::get_id(int& a_id)
 {
-}
-
-void school::student_write()
-{
-}
+    switch(a_id)
+    {
+        case 1:return &student1;
+        case 2:return &student2;
+        case 3:return &student3;
+        default: break;
+    }
+   return nullptr;
+};

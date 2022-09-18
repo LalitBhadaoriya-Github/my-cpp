@@ -1,16 +1,20 @@
-#pragma once
+#include <iostream>
+#include <string>
 #include "student.h"
-#include "teacher.h"
+#pragma once
 
 class school
 {
+    public:
+    student student1;
+    student student2;
+    student student3;
+
     school();
+ 
+    void  read_student_data(int id, std::string& l_name ,int& a_rool, std::string& a_sub,int& a_marks);
 
-    void teacher_read(char teacher_name);
+    student* get_id(int& a_id);
 
-    void student_read(char student_name);
-
-    void teacher_write();
-
-    void student_write();
 };
+
